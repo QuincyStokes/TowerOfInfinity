@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 1334318231847613319}
   - component: {fileID: 8799698580715087150}
   m_Layer: 5
-  m_Name: PotionRewardT2
+  m_Name: GetPotionRewardT2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

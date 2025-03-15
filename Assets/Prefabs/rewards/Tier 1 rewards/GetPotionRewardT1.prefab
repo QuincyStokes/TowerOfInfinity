@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 1334318231847613319}
   - component: {fileID: 8799698580715087150}
   m_Layer: 5
-  m_Name: PotionRewardT3
+  m_Name: GetPotionRewardT1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9607843, g: 0.81960785, b: 0.25882354, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -359,9 +359,7 @@ MonoBehaviour:
   buttonIcon: {fileID: 586901623457209856}
   descriptionText: {fileID: 5301748049009370345}
   icon: {fileID: 8145951374611147372, guid: ca1fe683d8872314481b6dbcd87cb1d1, type: 3}
-  description: Get a potion that increases your health by 2
+  description: Get a potion that increases your health by 10
   confirmSFX: {fileID: 0}
   UIamg: {fileID: 0}
-  potionValue: 2
-  ifHasPotionDescription: 'Increase potion strength by '
-  potionStrengthIncrease: 
+  potionValue: 10

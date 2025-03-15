@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour {
     public float moveTime = 0.1f;       //Time it will take object to move, in seconds.
     public LayerMask blockingLayer;     //Layer on which collision will be checked.
     public LayerMask enemyLayer;
+    public static bool movementLocked = false;
 
 
     private BoxCollider2D boxCollider;  //The BoxCollider2D component attached to this object.
@@ -48,23 +49,27 @@ public class PlayerMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if(Input.GetKeyDown(KeyCode.D)){
-            AttemptMove<Wall>(1, 0);
-            currentDirection = 0;
-            playerAnimation.ChangeDirection(currentDirection);
-        } else if (Input.GetKeyDown(KeyCode.A)){
-            AttemptMove<Wall>(-1, 0);
-            currentDirection = 1;
-            playerAnimation.ChangeDirection(currentDirection);
-        }else if (Input.GetKeyDown(KeyCode.W)){
-            AttemptMove<Wall>(0, 1);
-            currentDirection = 2;
-            playerAnimation.ChangeDirection(currentDirection);
-        }else if (Input.GetKeyDown(KeyCode.S)){
-            AttemptMove<Wall>(0, -1);
-            currentDirection = 3;
-            playerAnimation.ChangeDirection(currentDirection);
+        if(!movementLocked)
+        {
+            if(Input.GetKeyDown(KeyCode.D)){
+                AttemptMove<Wall>(1, 0);
+                currentDirection = 0;
+                playerAnimation.ChangeDirection(currentDirection);
+            } else if (Input.GetKeyDown(KeyCode.A)){
+                AttemptMove<Wall>(-1, 0);
+                currentDirection = 1;
+                playerAnimation.ChangeDirection(currentDirection);
+            }else if (Input.GetKeyDown(KeyCode.W)){
+                AttemptMove<Wall>(0, 1);
+                currentDirection = 2;
+                playerAnimation.ChangeDirection(currentDirection);
+            }else if (Input.GetKeyDown(KeyCode.S)){
+                AttemptMove<Wall>(0, -1);
+                currentDirection = 3;
+                playerAnimation.ChangeDirection(currentDirection);
+            }
         }
+        
     }
 
     void FixedUpdate()

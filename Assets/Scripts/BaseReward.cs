@@ -37,7 +37,7 @@ public abstract class BaseReward : MonoBehaviour
     }
 
     public abstract void Reward();
-    public void Start()
+    public virtual void Start()
     {
         descriptionText.text = Description;
         buttonIcon.sprite = icon;

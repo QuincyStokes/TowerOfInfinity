@@ -2469,7 +2469,7 @@ GameObject:
   - component: {fileID: 388295069}
   - component: {fileID: 388295068}
   m_Layer: 5
-  m_Name: SubtractionSword
+  m_Name: PotionImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3326,7 +3326,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.063306, y: 45, z: -10}
+  m_LocalPosition: {x: 4.062622, y: 45, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6725,7 +6725,7 @@ Transform:
   m_GameObject: {fileID: 1379693495}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.063306, y: 45, z: -10}
+  m_LocalPosition: {x: 4.062622, y: 45, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9018,7 +9018,7 @@ MonoBehaviour:
   AddHitbox: {fileID: 630098866}
   TimesHitbox: {fileID: 1279034100}
   DivideHitbox: {fileID: 919494474}
-  attackTimer: 0.1
+  attackTimer: 0.05
 --- !u!50 &1967309445
 Rigidbody2D:
   serializedVersion: 4

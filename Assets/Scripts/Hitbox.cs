@@ -24,7 +24,16 @@ public class Hitbox : MonoBehaviour
                 boss.ChangeHealth(playerAttack.performOperation());
                 return;
             }
-
+        }
+        else if (other.CompareTag("HittablePotion"))
+        {
+            HittablePotion hittablePotion = other.GetComponent<HittablePotion>();
+            if(hittablePotion != null)
+            {
+                hittablePotion.ChangePotionHealth(playerAttack.performOperation());
+                Destroy(hittablePotion.gameObject);
+                //slide the potion ui back
+            }
         }
         
         //instead of just destroying, perform the corresponding sword attack damage

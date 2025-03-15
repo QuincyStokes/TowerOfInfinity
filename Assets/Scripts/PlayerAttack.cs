@@ -61,6 +61,7 @@ public class PlayerAttack : MonoBehaviour
         OnPlayerAttacked?.Invoke(transform.position);
         hitbox.SetActive(true);
         yield return new WaitForSeconds(attackTimer);
+        
         hitbox.SetActive(false);
     }
 
