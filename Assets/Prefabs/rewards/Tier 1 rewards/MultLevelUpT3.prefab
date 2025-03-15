@@ -363,4 +363,4 @@ MonoBehaviour:
   confirmSFX: {fileID: 8300000, guid: c5cb2ac29e89dbf43a9b644caaad45e6, type: 3}
   UIamg: {fileID: -6961386016481578428, guid: 7e4d1e11053ed7644b10d39f4a58cc2b, type: 2}
   weaponToLevel: 2
-  levelsToAdd: 2
+  levelsToAdd: 3

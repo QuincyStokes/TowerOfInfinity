@@ -70,23 +70,24 @@ public class Enemy : MonoBehaviour
         }
         else if(GameManager.instance.GetCurrentLevel() == 3)
         {
+            int upper = (int)Random.Range(4+GameManager.instance.numOfEnemy*2, GameManager.instance.numOfEnemy*3+6);
+            int lower = (int)Random.Range(2, GameManager.instance.numOfEnemy/2+3);
+            if(upper % lower ==0)
+            {
+                health = ((int)(upper*0.8)).ToString();
+            }
+            else
+            {
+                while(lower%7==0 || lower%11==0 || lower%13==0 || lower%17==0 || lower%19==0 || lower%23==0 || lower%29==0 || lower%31==0 || lower%37==0 || lower%41==0 || lower%43==0 || lower%47==0)
+                {
+                    lower--;
+                }
+                health = upper.ToString()+"/"+lower.ToString();
+            }
             int n = Random.Range(1, 100);
-
-            if(n <40) // 40% chance to have positive fraction health
+            if(n<50)
             {
-                health = ((int)Random.Range(4+GameManager.instance.numOfEnemy, GameManager.instance.numOfEnemy*2+6)).ToString() +"/"+((int)Random.Range(2, GameManager.instance.numOfEnemy/2f+2)).ToString();
-            }
-            else if(n < 80)// 80 % chance to have negative fraction health
-            {
-                health = "-" + ((int)Random.Range(4+GameManager.instance.numOfEnemy, GameManager.instance.numOfEnemy*2+6)).ToString() +"/"+((int)Random.Range(2, GameManager.instance.numOfEnemy/2f+2)).ToString();
-            }
-            else if(n < 90)// 10 % chance to have positive integer health
-            {
-                health = ((int)Random.Range(6+GameManager.instance.numOfEnemy, GameManager.instance.numOfEnemy*2+10)).ToString();
-            }
-            else // 10 % chance to have negative integer health
-            {
-                health = "-" + ((int)Random.Range(4+GameManager.instance.numOfEnemy, GameManager.instance.numOfEnemy*2+8)).ToString();
+                health = "-"+health;
             }
         }
         else if(GameManager.instance.GetCurrentLevel() == 4)
@@ -95,7 +96,7 @@ public class Enemy : MonoBehaviour
             int lower = (int)Random.Range(2+GameManager.instance.numOfEnemy, GameManager.instance.numOfEnemy*3+6);
             if(upper % lower ==0)
             {
-                health = (upper*2).ToString();
+                health = (upper*3).ToString();
             }
             else
             {
@@ -104,6 +105,11 @@ public class Enemy : MonoBehaviour
                     lower++;
                 }
                 health = upper.ToString()+"/"+lower.ToString();
+            }
+            int n = Random.Range(1, 100);
+            if(n<50)
+            {
+                health = "-"+health;
             }
         }
     }
