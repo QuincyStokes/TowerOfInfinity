@@ -56,26 +56,28 @@ public class TilemapSetup : MonoBehaviour
         
     }
 
-    public void NewLevel()
+    public void NewLevel(int level)
     {
-        InitializeGridPositions();
-        ClearPreviousLevel();
+        InitializeGridPositions(level);
+        ClearPreviousLevel(level);
         Generate();
     }
 
-    private void InitializeGridPositions()
+    private void InitializeGridPositions(int level)
     {
+        maxRoomsLength=2+level*4;
         gridPositions = new int[maxRoomsLength, maxRoomsLength]; // values default to 0
         
     }
 
-    private void ClearPreviousLevel()
+    private void ClearPreviousLevel(int level)
     {
         //destroys everything added to this list. Will be enemies and room presets
         foreach(GameObject go in toBeDestroyedOnReset)
         {
             Destroy(go);
         }
+        maxNumRooms=2+level*4;
         numRooms = maxNumRooms;
     }
 

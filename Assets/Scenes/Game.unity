@@ -3155,9 +3155,9 @@ MonoBehaviour:
   - {fileID: 1286945708081363910, guid: c058ab41c97b25d49b6f68c510bc8ede, type: 3}
   level1BossRoom: {fileID: 8360424644708026662, guid: fcf994df1fcfdb04983a461a1514f459, type: 3}
   level1Boss: {fileID: 3561451263486795000, guid: a5bb21ae1ff5a9d4da0053e6c998486e, type: 3}
-  roomWidth: 11
-  maxRoomsLength: 10
-  numRooms: 10
+  roomWidth: 7
+  maxRoomsLength: 6
+  numRooms: 6
   initializing: 1
   area:
     m_Position: {x: 0, y: 0, z: 0}
@@ -3326,7 +3326,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0624456, y: 45, z: -10}
+  m_LocalPosition: {x: 4.063306, y: 45, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6725,7 +6725,7 @@ Transform:
   m_GameObject: {fileID: 1379693495}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0624456, y: 45, z: -10}
+  m_LocalPosition: {x: 4.063306, y: 45, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                TilemapSetup.Instance.NewLevel();
+                TilemapSetup.Instance.NewLevel(level);
                 beatLevel?.Invoke(level);
             }
         }
@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
         {
             //Call the SetupScene function of the BoardManager script, pass it current level number.
             //boardScript.SetupScene(level);
-            TilemapSetup.Instance.NewLevel();
+            TilemapSetup.Instance.NewLevel(level);
         }
 
     }
