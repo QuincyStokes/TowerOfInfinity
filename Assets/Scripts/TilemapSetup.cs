@@ -334,5 +334,10 @@ public class TilemapSetup : MonoBehaviour
         GameObject boss = Instantiate(level1Boss, new Vector2(x * roomWidth + roomWidth/2, y * roomWidth + roomWidth/2), Quaternion.identity);
         toBeDestroyedOnReset.Add(bossRoom);
         toBeDestroyedOnReset.Add(boss);
+
+        //level1:  70
+        //level2:  -101
+        //level3:  101/105
+        //level4:  999999
     }
 }
