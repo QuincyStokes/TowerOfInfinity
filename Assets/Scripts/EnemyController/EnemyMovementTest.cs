@@ -65,12 +65,13 @@ public class EnemyMovementTest : MonoBehaviour
     private void TryMove(Vector2 direction)
     {
         Vector3 nextPosition = transform.position + new Vector3(direction.x, direction.y, 0f);
-        if (wallTilemap == null) return;
+        if (wallTilemap == null || player == null) return;
 
         Vector3Int nextCell = wallTilemap.WorldToCell(nextPosition);
+        Vector3Int playerCell = wallTilemap.WorldToCell(player.position);
 
-        // Check if there's a wall at the next position
-        if (wallTilemap.GetTile(nextCell) == null)
+        // Check if there's a wall or the player at the next position
+        if (wallTilemap.GetTile(nextCell) == null && nextCell != playerCell)
         {
             startPosition = transform.position;
             targetPosition = nextPosition;
@@ -91,8 +92,10 @@ public class EnemyMovementTest : MonoBehaviour
         {
             Vector3 nextPosition = transform.position + new Vector3(dir.x, dir.y, 0f);
             Vector3Int nextCell = wallTilemap.WorldToCell(nextPosition);
+            Vector3Int playerCell = wallTilemap.WorldToCell(player.position);
 
-            if (wallTilemap.GetTile(nextCell) == null) // Check if it's a valid move
+            // Check if it's a valid move (not a wall and not occupied by the player)
+            if (wallTilemap.GetTile(nextCell) == null && nextCell != playerCell)
             {
                 float distanceToPlayer = Vector3.Distance(nextPosition, playerPosition);
                 if (distanceToPlayer < shortestDistance)

@@ -38,6 +38,9 @@ public class PlayerMovementTest : MonoBehaviour
                 transform.position = targetPosition;
                 isMoving = false;
                 moveProgress = 0f;
+
+                // End player's turn after moving
+                TurnManager.Instance.EndPlayerTurn();
             }
             else
             {
