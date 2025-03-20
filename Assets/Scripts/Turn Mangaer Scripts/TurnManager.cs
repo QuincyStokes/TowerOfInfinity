@@ -5,10 +5,25 @@ public class TurnManager : MonoBehaviour
 {
     public static TurnManager Instance { get; private set; }
     private bool isPlayerTurn = true;
+    private EnemyTurnManager enemyTurnManager;
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            Debug.Log("[TurnManager] Initialized.");
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        enemyTurnManager = GetComponent<EnemyTurnManager>();
+        if (enemyTurnManager == null)
+        {
+            Debug.LogError("[TurnManager] EnemyTurnManager not found! Please attach the EnemyTurnManager script.");
+        }
     }
 
     public bool IsPlayerTurn()
@@ -16,21 +31,20 @@ public class TurnManager : MonoBehaviour
         return isPlayerTurn;
     }
 
-    // Start the player's turn and then wait 5 seconds before switching turns
     public void EndPlayerTurn()
     {
         if (isPlayerTurn)
         {
-            Debug.Log("Player has finished their turn.");
-            isPlayerTurn = false; // End player's turn
-            StartCoroutine(SwitchTurnAfterDelay(5f)); // Wait for 5 seconds before switching turns
+            Debug.Log("[TurnManager] Ending player turn.");
+            isPlayerTurn = false;
+            Debug.Log("[TurnManager] Switching to enemy turn...");
+            enemyTurnManager.StartEnemyTurn();
         }
     }
 
-    private IEnumerator SwitchTurnAfterDelay(float delay)
+    public void StartPlayerTurn()
     {
-        yield return new WaitForSeconds(delay);
-        isPlayerTurn = true; // Start player's turn again after delay
-        Debug.Log("Player's turn starts again.");
+        Debug.Log("[TurnManager] Starting player turn.");
+        isPlayerTurn = true;
     }
 }

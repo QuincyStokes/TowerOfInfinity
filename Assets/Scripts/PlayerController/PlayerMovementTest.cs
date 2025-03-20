@@ -28,6 +28,12 @@ public class PlayerMovementTest : MonoBehaviour
 
     void Update()
     {
+        // Check if it's the player's turn before allowing movement
+        if (!TurnManager.Instance.IsPlayerTurn())
+        {
+            return; // Don't allow movement if it's not the player's turn
+        }
+
         if (isMoving)
         {
             moveProgress += Time.deltaTime * moveSpeed;
@@ -51,7 +57,7 @@ public class PlayerMovementTest : MonoBehaviour
 
     public void TryMove(Vector2 direction)
     {
-        if (isMoving) return;
+        if (isMoving || !TurnManager.Instance.IsPlayerTurn()) return;  // Block movement if not player's turn
 
         Vector3 nextPosition = transform.position + new Vector3(direction.x, direction.y, 0f);
         if (wallTilemap == null) return;
