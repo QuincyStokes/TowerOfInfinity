@@ -70,44 +70,44 @@ public class Enemy : MonoBehaviour
         }
         else if(GameManager.instance.GetCurrentLevel() == 3)
         {
-            int upper = (int)Random.Range(4+GameManager.instance.numOfEnemy*2, GameManager.instance.numOfEnemy*3+6);
+            int upper = (int)Random.Range(4+GameManager.instance.numOfEnemy*3, GameManager.instance.numOfEnemy*4+6);
             int lower = (int)Random.Range(2, GameManager.instance.numOfEnemy/2+3);
-            if(upper % lower ==0)
+            int n = Random.Range(1, 100);
+            if(n<20)
             {
-                health = ((int)(upper*0.8)).ToString();
+                health = ((int)(upper*0.7)).ToString();
             }
             else
             {
-                while(lower%7==0 || lower%11==0 || lower%13==0 || lower%17==0 || lower%19==0 || lower%23==0 || lower%29==0 || lower%31==0 || lower%37==0 || lower%41==0 || lower%43==0 || lower%47==0)
+                while(upper%lower==0 ||lower%7==0 || lower%11==0 || lower%13==0 || lower%17==0 || lower%19==0 || lower%23==0 || lower%29==0 || lower%31==0 || lower%37==0 || lower%41==0 || lower%43==0 || lower%47==0)
                 {
-                    lower--;
+                    lower++;
                 }
                 health = upper.ToString()+"/"+lower.ToString();
             }
-            int n = Random.Range(1, 100);
-            if(n<50)
+            if(n>10 && n<60)
             {
                 health = "-"+health;
             }
         }
         else if(GameManager.instance.GetCurrentLevel() == 4)
         {
-            int upper = (int)Random.Range(4+GameManager.instance.numOfEnemy*5, GameManager.instance.numOfEnemy*10+6);
+            int upper = (int)Random.Range(6+GameManager.instance.numOfEnemy*7, GameManager.instance.numOfEnemy*10+8);
             int lower = (int)Random.Range(2+GameManager.instance.numOfEnemy, GameManager.instance.numOfEnemy*3+6);
-            if(upper % lower ==0)
+            int n = Random.Range(1, 100);
+            if(n < 40)
             {
                 health = (upper*3).ToString();
             }
             else
             {
-                while(lower%11==0 || lower%13==0 || lower%17==0 || lower%19==0 || lower%23==0 || lower%29==0 || lower%31==0 || lower%37==0 || lower%41==0 || lower%43==0 || lower%47==0 || lower%53==0 || lower%59==0 || lower%61==0 || lower%67==0 || lower%71==0 || lower%73==0 || lower%79==0)
+                while(upper % lower ==0 || lower%11==0 || lower%13==0 || lower%17==0 || lower%19==0 || lower%23==0 || lower%29==0 || lower%31==0 || lower%37==0 || lower%41==0 || lower%43==0 || lower%47==0 || lower%53==0 || lower%59==0 || lower%61==0 || lower%67==0 || lower%71==0 || lower%73==0 || lower%79==0)
                 {
                     lower++;
                 }
                 health = upper.ToString()+"/"+lower.ToString();
             }
-            int n = Random.Range(1, 100);
-            if(n<50)
+            if(n>20 && n<70)
             {
                 health = "-"+health;
             }
