@@ -37,12 +37,6 @@ public class AudioManager : MonoBehaviour
         backgroundMusicPlaying = false;
     }
 
-    private void Start()
-    {
-        
-
-    }
-
     private void Update()
     {
         if(backgroundMusicPlaying == false)
@@ -50,6 +44,7 @@ public class AudioManager : MonoBehaviour
             backgroundMusicPlaying = true;
             AudioClip backgroundMusicToPlay = backgroundMusic[Random.Range(0, backgroundMusic.Count)];
             StartCoroutine(SongCooldown(backgroundMusicToPlay));
+            Debug.Log($"Playing song {backgroundMusicToPlay.name} at 5% volume");
             PlayOneShot(backgroundMusicToPlay, .05f, backgroundAMG);
         }   
     }
