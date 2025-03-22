@@ -47,6 +47,5 @@ MonoBehaviour:
   poolSize: 10
   backgroundAMG: {fileID: 0}
   backgroundMusic:
-  - {fileID: 8300000, guid: 2a09119e8d96e3d48b8263ea7c7710f0, type: 3}
   - {fileID: 8300000, guid: 0ca9c496bb0c86c4cb671347272b0dfb, type: 3}
   - {fileID: 8300000, guid: 5e62dcc4e7ec45540b932a7166bb650c, type: 3}
