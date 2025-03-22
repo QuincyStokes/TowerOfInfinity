@@ -3326,7 +3326,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.063306, y: 45, z: -10}
+  m_LocalPosition: {x: 4.0624456, y: 45, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5598,6 +5598,9 @@ MonoBehaviour:
   tier3Wieght: 70
   tier3Rewards:
   - {fileID: 7835436065751301536, guid: 4c867343d6dfc7e49baf12a34b4ad33b, type: 3}
+  - {fileID: 1454734714088842638, guid: 2a133d646f9347047912ce3b314a326b, type: 3}
+  - {fileID: 1454734714088842638, guid: 2a133d646f9347047912ce3b314a326b, type: 3}
+  - {fileID: 1454734714088842638, guid: 2a133d646f9347047912ce3b314a326b, type: 3}
   tier3PotionRewards:
   - {fileID: 7835436065751301536, guid: 5dd07ceb81a0bf44cb93387ff1e6365e, type: 3}
   tier3AdditionRewards:
@@ -5626,6 +5629,13 @@ MonoBehaviour:
   - {fileID: 7835436065751301536, guid: 6ee70ce390299114c89da3d32e46bc2b, type: 3}
   tier1DivisionRewards:
   - {fileID: 7835436065751301536, guid: 90fd89230a2e5404bad765cfd0c7b34a, type: 3}
+  tier1HasPotionRewards:
+  - {fileID: 1454734714088842638, guid: 2a133d646f9347047912ce3b314a326b, type: 3}
+  - {fileID: 1454734714088842638, guid: 2a133d646f9347047912ce3b314a326b, type: 3}
+  - {fileID: 1454734714088842638, guid: 2a133d646f9347047912ce3b314a326b, type: 3}
+  - {fileID: 1454734714088842638, guid: 2a133d646f9347047912ce3b314a326b, type: 3}
+  - {fileID: 1454734714088842638, guid: 2a133d646f9347047912ce3b314a326b, type: 3}
+  - {fileID: 1454734714088842638, guid: 2a133d646f9347047912ce3b314a326b, type: 3}
 --- !u!4 &1187394577
 Transform:
   m_ObjectHideFlags: 0
@@ -6725,7 +6735,7 @@ Transform:
   m_GameObject: {fileID: 1379693495}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.063306, y: 45, z: -10}
+  m_LocalPosition: {x: 4.0624456, y: 45, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -9,6 +9,7 @@ public class LevelUpPotion : BaseReward
 {
     [SerializeField] private GameObject hittablePotion;
     [SerializeField] private float potionMoveTime;
+    [SerializeField] private Vector2 startingPos;
 
     private void Awake()
     {
@@ -21,14 +22,14 @@ public class LevelUpPotion : BaseReward
 
     private IEnumerator StartHittablePotion()
     {
-        PlayerMovement.movementLocked = true;
-        Vector2 targetPos = new Vector2(PlayerHealth.instance.transform.position.x+1, PlayerHealth.instance.transform.position.y);
+        startingPos = Camera.main.ScreenToWorldPoint(new Vector2(60, 53));
+        Debug.Log($"Starting Pos set to {startingPos}");
         Time.timeScale = 1;
-        yield return new WaitForSeconds(.1f);
-        Instantiate(hittablePotion, targetPos, Quaternion.identity);
-        RewardManager.Instance.DisableRewardMenu(); 
-
         
+        yield return new WaitForSeconds(.1f);
+        Instantiate(hittablePotion, startingPos, Quaternion.identity);
+        
+        RewardManager.Instance.DisableRewardMenu(); 
     }
     
 }

@@ -21,6 +21,7 @@ public class RewardManager : MonoBehaviour
     public List<GameObject> tier3AdditionRewards;
     public List<GameObject> tier3MultiplicationRewards;
     public List<GameObject> tier3DivisionRewards;
+    
 
 
 
@@ -44,7 +45,7 @@ public class RewardManager : MonoBehaviour
     public List<GameObject> tier1AdditionRewards;
     public List<GameObject> tier1MultiplicationRewards;
     public List<GameObject> tier1DivisionRewards;
-
+    public List<GameObject> tier1HasPotionRewards;
 
 
 
@@ -165,6 +166,10 @@ public class RewardManager : MonoBehaviour
             if(!PlayerHealth.instance.hasPotion)
             {
                 tier1RewardPool = tier1RewardPool.Union<GameObject>(tier1PotionRewards).ToList<GameObject>();
+            }
+            else
+            {
+                tier1RewardPool = tier1RewardPool.Union<GameObject>(tier1HasPotionRewards).ToList<GameObject>();
             }
             if(GameManager.instance.GetCurrentLevel() >= 2)
             {
