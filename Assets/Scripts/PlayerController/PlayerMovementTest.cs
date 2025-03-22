@@ -57,8 +57,6 @@ public class PlayerMovementTest : MonoBehaviour
 
     public void TryMove(Vector2 direction)
     {
-        if (isMoving || !TurnManager.Instance.IsPlayerTurn()) return;  // Block movement if not player's turn
-
         Vector3 nextPosition = transform.position + new Vector3(direction.x, direction.y, 0f);
         if (wallTilemap == null) return;
 

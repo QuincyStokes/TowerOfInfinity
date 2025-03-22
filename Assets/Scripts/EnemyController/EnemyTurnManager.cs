@@ -8,6 +8,7 @@ public class EnemyTurnManager : MonoBehaviour
 
     private List<EnemyMovementTest> enemies = new List<EnemyMovementTest>();
     private int enemiesMoving = 0;
+    private bool canEnemiesMove = false;
 
     private void Awake()
     {
@@ -30,26 +31,30 @@ public class EnemyTurnManager : MonoBehaviour
 
     public void StartEnemyTurn()
     {
+        canEnemiesMove = true;
         Debug.Log("[EnemyTurnManager] Starting enemy turn...");
         StartCoroutine(EnemyTurnRoutine());
     }
 
-    private IEnumerator EnemyTurnRoutine()
-    {
-        enemiesMoving = 0;
+    public void StopEnemyMovement(){
+        canEnemiesMove = false;
+    }
 
+     private IEnumerator EnemyTurnRoutine()
+    {
         foreach (EnemyMovementTest enemy in enemies)
         {
-            enemiesMoving++;
-            Debug.Log($"[EnemyTurnManager] Enemy {enemy.name} is moving...");
-            enemy.MoveOneStep();
-            yield return new WaitForSeconds(0.5f); // Small delay between enemies
+            if (canEnemiesMove)
+            {
+                enemiesMoving++;
+                enemy.MoveOneStep(); 
+                yield return new WaitForSeconds(.5f);
+            }
         }
 
-        // If no enemies are moving, end turn immediately
-        if (enemiesMoving == 0)
+        // After all enemies move, inform the TurnManager that the enemy turn has ended
+        if (enemiesMoving == enemies.Count)
         {
-            Debug.Log("[EnemyTurnManager] No enemies moved. Ending enemy turn.");
             EndEnemyTurn();
         }
     }
@@ -57,12 +62,9 @@ public class EnemyTurnManager : MonoBehaviour
     public void EnemyFinishedAction()
     {
         enemiesMoving--;
-        Debug.Log($"[EnemyTurnManager] An enemy finished moving. Remaining: {enemiesMoving}");
-
         if (enemiesMoving <= 0)
         {
-            Debug.Log("[EnemyTurnManager] All enemies finished moving. Ending enemy turn.");
-            EndEnemyTurn();
+            EndEnemyTurn(); // End enemy turn after last enemy moves
         }
     }
 
