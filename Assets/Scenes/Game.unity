@@ -3329,7 +3329,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.063306, y: 45, z: -10}
+  m_LocalPosition: {x: 4.0620394, y: 45, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5598,7 +5598,7 @@ MonoBehaviour:
   rewardMenu: {fileID: 570302336}
   count: 0
   rewardIsUp: 0
-  tier3Wieght: 70
+  tier3Wieght: 60
   tier3Rewards:
   - {fileID: 7835436065751301536, guid: 4c867343d6dfc7e49baf12a34b4ad33b, type: 3}
   tier3PotionRewards:
@@ -5607,7 +5607,7 @@ MonoBehaviour:
   - {fileID: 7835436065751301536, guid: c24f12e23b0ad14419b49682fee5dbd7, type: 3}
   tier3MultiplicationRewards: []
   tier3DivisionRewards: []
-  tier2Wieght: 25
+  tier2Wieght: 30
   tier2Rewards:
   - {fileID: 614460846404969916, guid: f2d887a3835ca1a4ca72ddb4e56833df, type: 3}
   tier2PotionRewards:
@@ -5618,7 +5618,8 @@ MonoBehaviour:
   - {fileID: 7835436065751301536, guid: 50fc84e4581971642aed5a5422c52322, type: 3}
   tier2DivisionRewards:
   - {fileID: 7835436065751301536, guid: 7dc496258aa4c3047bb8e1358aa34367, type: 3}
-  tier1Wieght: 5
+  tier2HasPotionRewards: []
+  tier1Wieght: 10
   tier1Rewards:
   - {fileID: 1454734714088842638, guid: b73d875c54b58144d924b9d1428e7c8f, type: 3}
   tier1PotionRewards:
@@ -6730,7 +6731,7 @@ Transform:
   m_GameObject: {fileID: 1379693495}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.063306, y: 45, z: -10}
+  m_LocalPosition: {x: 4.0620394, y: 45, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9020,7 +9021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1927057019
 MonoBehaviour:
   m_ObjectHideFlags: 0

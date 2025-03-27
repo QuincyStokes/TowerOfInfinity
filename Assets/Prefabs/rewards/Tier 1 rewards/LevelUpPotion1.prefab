@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8908611438715406918}
   - component: {fileID: 862277710336799615}
   m_Layer: 5
-  m_Name: LevelUpPotion
+  m_Name: LevelUpPotion1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,12 +150,12 @@ MonoBehaviour:
   buttonIcon: {fileID: 4933864226632701690}
   descriptionText: {fileID: 2763690489382259763}
   icon: {fileID: 8145951374611147372, guid: ca1fe683d8872314481b6dbcd87cb1d1, type: 3}
-  description: Increase the strength of your potion!
+  description: Manipulate the strength of your potion!
   confirmSFX: {fileID: 0}
   UIamg: {fileID: 0}
   hittablePotion: {fileID: 4076031587050218644, guid: 753119ce209c53848a8c6e5599fa9e18, type: 3}
-  potionUI: {fileID: 0}
   potionMoveTime: 100
+  startingPos: {x: 0, y: 0}
 --- !u!1 &5568999609087710023
 GameObject:
   m_ObjectHideFlags: 0
