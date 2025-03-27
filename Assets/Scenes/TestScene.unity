@@ -6226,6 +6226,7 @@ MonoBehaviour:
   - {fileID: 7835436065751301536, guid: 6ee70ce390299114c89da3d32e46bc2b, type: 3}
   tier1DivisionRewards:
   - {fileID: 7835436065751301536, guid: 90fd89230a2e5404bad765cfd0c7b34a, type: 3}
+  tier1HasPotionRewards: []
 --- !u!4 &1187394577
 Transform:
   m_ObjectHideFlags: 0

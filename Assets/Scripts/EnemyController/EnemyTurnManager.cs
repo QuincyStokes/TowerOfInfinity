@@ -53,10 +53,9 @@ public class EnemyTurnManager : MonoBehaviour
         }
 
         // After all enemies move, inform the TurnManager that the enemy turn has ended
-        if (enemiesMoving == enemies.Count)
-        {
-            EndEnemyTurn();
-        }
+        yield return new WaitUntil(() => enemiesMoving <= 0);
+
+        EndEnemyTurn();
     }
 
     public void EnemyFinishedAction()

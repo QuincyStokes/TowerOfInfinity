@@ -46,7 +46,7 @@ public class PlayerMovementTest : MonoBehaviour
                 moveProgress = 0f;
 
                 // End player's turn after moving
-                TurnManager.Instance.EndPlayerTurn();
+                //TurnManager.Instance.EndPlayerTurn();
             }
             else
             {
