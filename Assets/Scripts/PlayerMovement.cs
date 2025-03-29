@@ -16,8 +16,8 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody2D rb2D;           //The Rigidbody2D component attached to this object.
     private float inverseMoveTime;      //Used to make movement more efficient.
     private bool isPlayerMoving;
-    private PlayerAnimation playerAnimation;
-    public int currentDirection;
+    private static PlayerAnimation playerAnimation;
+    public static int currentDirection;
     public TilemapSetup tilemapSetup;
     public GameObject pauseMenu;
     [Header("Sound Effects")]
@@ -200,6 +200,11 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     
+    public static void FacePlayer(int direction)
+    {
+        currentDirection = direction;
+        playerAnimation.ChangeDirection(currentDirection);
+    }
 
     
 }

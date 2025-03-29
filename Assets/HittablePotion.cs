@@ -23,6 +23,7 @@ public class HittablePotion : MonoBehaviour
         potionUI = GameObject.Find("PotionImage");
         potionUI.SetActive(false);
         targetPos = new Vector2(PlayerHealth.instance.transform.position.x+1, PlayerHealth.instance.transform.position.y);
+        PlayerMovement.FacePlayer(0);
         PlayerMovement.movementLocked = true;
 
     }

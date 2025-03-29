@@ -3329,7 +3329,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0620394, y: 45, z: -10}
+  m_LocalPosition: {x: 4.0624456, y: 45, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6731,7 +6731,7 @@ Transform:
   m_GameObject: {fileID: 1379693495}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0620394, y: 45, z: -10}
+  m_LocalPosition: {x: 4.0624456, y: 45, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7440,6 +7440,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bosslev1
       objectReference: {fileID: 0}
+    - target: {fileID: 3561451263486795000, guid: a5bb21ae1ff5a9d4da0053e6c998486e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7466978205715505227, guid: a5bb21ae1ff5a9d4da0053e6c998486e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.493843
@@ -7483,10 +7487,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7531199399746584118, guid: a5bb21ae1ff5a9d4da0053e6c998486e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5bb21ae1ff5a9d4da0053e6c998486e, type: 3}
 --- !u!1 &1646166645
 GameObject:
@@ -9155,7 +9156,6 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  currentDirection: 0
   tilemapSetup: {fileID: 496578010}
   pauseMenu: {fileID: 6930069}
   SFXamg: {fileID: 2286712118783445282, guid: 7e4d1e11053ed7644b10d39f4a58cc2b, type: 2}
