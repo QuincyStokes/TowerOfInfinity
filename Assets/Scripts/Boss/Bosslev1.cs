@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using System.Collections.Generic;
 using UnityEngine.Audio;
 
-public class Bosslev1 : MonoBehaviour
+public class Bosslev1 : BaseBoss
 {
     // Start is called before the first frame update
 
@@ -14,91 +14,44 @@ public class Bosslev1 : MonoBehaviour
     //health
     //functions that change the "format" it's displayed in, depending on what type of number it is  
     //text for health
-    private TMP_Text healthText;
-    public string health = "101";
-    private Rigidbody2D rb2D;
-    public float moveTime = 0.1f;       //Time it will take object to move, in seconds.
-
-    private float inverseMoveTime;      //Used to make movement more efficient.
-    
-    private bool enemyTurn;
 
     public GameObject projectilePrefab;
 
     public LayerMask projectileLayer;
     //public PlayerHealth playerHealth;
-    public Animator animator;
-    public GameObject thisObject;
-    public BoxCollider2D collider2d;
-    public CircleCollider2D outerCollider2d;
-
-    [Header("SFX")]
-    public AudioMixerGroup SFXamg;
-    public AudioClip shootSFX;
 
 
-    void OnEnable()
+
+    new void Start()
     {
-        PlayerMovement.OnPlayerMoved += TakeTurn;
-        PlayerAttack.OnPlayerAttacked += TakeTurn;
+        health = "66";
+        base.Start();
     }
-
-    void OnDisable()
-    {
-        PlayerMovement.OnPlayerMoved -= TakeTurn;
-        PlayerAttack.OnPlayerAttacked -= TakeTurn;
-    
-    }
-
-
-
-
-    void Start()
-    {
-        rb2D = GetComponentInChildren<Rigidbody2D>();
-        inverseMoveTime = 1 / moveTime;
-        healthText = GetComponentInChildren<TMP_Text>();
-        //collider2d = GetComponentInChildren<BoxCollider2D>();
-        healthText.text = health.ToString();
-        //playerHealth = GameObject.Find("Player").GetComponent<PlayerHealth>();
-        animator.SetInteger("State", 0);
-        this.enabled = false;
-    }
-   
-    public void ChangeHealth(string attack)
-    {
-        ExpressionTree tree = new ExpressionTree();
-        tree.BuildFromInfix(health+attack);
-        tree.InorderTraversal();
-        health = tree.Evaluate().ToString();
-        UpdateHealth();
-    }
-
-    public void UpdateHealth(){
-        if(health == "0") {
-            BossRoomHandler.Instance.OpenDoor();
-            RewardManager.Instance.EnemyKilled();
-            Destroy(gameObject);
-            
-        } else {
-            healthText.text = health;
-        }
-    }
-
-    
-    void TakeTurn(Vector2 playerPosition)
+    protected override void TakeTurn(Vector2 playerPosition)
     {
         enemyTurn =  true;
-        if(enemyTurn)
+        
+        if(enemyTurn && !mustAttack)
         {
             Move(playerPosition);
         }
         if(enemyTurn)
         {
-            Attack(playerPosition);
+            if(mustAttack)
+            {
+                Attack(playerPosition);
+                mustAttack = false;
+            }
+            else
+            {
+                // show exclamation mark
+                mustAttack =true;
+            }
         }
     }
+   
 
+    
     void Move(Vector2 playerPosition) {
        
         if(Vector2.Distance((Vector2)transform.position, playerPosition) < 8)
@@ -230,7 +183,7 @@ public class Bosslev1 : MonoBehaviour
         //get player health to determine what operation to do
         
         StartCoroutine(AttackAnimationTimer());
-        AudioManager.Instance.PlayOneShotVariedPitch(shootSFX, 1f, SFXamg, .1f);
+        AudioManager.Instance.PlayOneShotVariedPitch(attackSFX, 1f, SFXamg, .1f);
         projectile.GetComponent<Projectile>().FireProjectile(velocity, this.gameObject);
         velocity = new Vector2(playerPosition.x - transform.position.x-0.4f, playerPosition.y - transform.position.y-0.4f);
         

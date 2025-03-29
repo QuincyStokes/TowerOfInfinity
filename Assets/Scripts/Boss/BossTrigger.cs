@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss1Trigger : MonoBehaviour
+public class BossTrigger : MonoBehaviour
 {
-    private Bosslev1 boss;
+    private BaseBoss boss;
     void Start()
     {
-        boss = gameObject.GetComponent<Bosslev1>();
+        boss = gameObject.GetComponent<BaseBoss>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
