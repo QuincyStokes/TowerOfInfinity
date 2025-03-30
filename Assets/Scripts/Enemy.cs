@@ -5,49 +5,14 @@ using Unity.VisualScripting;
 using UnityEngine.Audio;
 using System.Collections;
 
-public class Enemy : MonoBehaviour
+public class Enemy : BaseBoss
 {
-    // Start is called before the first frame update
-
-    //things the enemy needs
-    //health
-    //functions that change the "format" it's displayed in, depending on what type of number it is  
-    //text for health
-    private TMP_Text healthText;
-    public string health = "20";
-    private Rigidbody2D rb2D;
-    public float moveTime = 0.1f;       //Time it will take object to move, in seconds.
-
-    private float inverseMoveTime;      //Used to make movement more efficient.
-    
-    private bool enemyTurn;
 
     public GameObject projectilePrefab;
 
     public LayerMask projectileLayer;
     //public PlayerHealth playerHealth;
-    public Animator animator;
-    public GameObject thisObject;
-    public BoxCollider2D collider2d;
-    public CircleCollider2D outerCollider2d;
 
-    [Header("SFX")]
-    public AudioMixerGroup SFXamg;
-    public AudioClip shootSFX;
-
-
-    void OnEnable()
-    {
-        PlayerMovement.OnPlayerMoved += TakeTurn;
-        PlayerAttack.OnPlayerAttacked += TakeTurn;
-    }
-
-    void OnDisable()
-    {
-        PlayerMovement.OnPlayerMoved -= TakeTurn;
-        PlayerAttack.OnPlayerAttacked -= TakeTurn;
-    
-    }
 
     void Awake()
     {
@@ -115,39 +80,13 @@ public class Enemy : MonoBehaviour
     }
 
 
-    void Start()
+    new void Start()
     {
-        rb2D = GetComponentInChildren<Rigidbody2D>();
-        inverseMoveTime = 1 / moveTime;
-        healthText = GetComponentInChildren<TMP_Text>();
-        //collider2d = GetComponentInChildren<BoxCollider2D>();
-        healthText.text = health.ToString();
-        ChangeHealth("+0");
-        //playerHealth = GameObject.Find("Player").GetComponent<PlayerHealth>();
-        animator.SetInteger("State", 0);
-        this.enabled = false;
+       base.Start();
     }
    
-    public void ChangeHealth(string attack)
-    {
-        ExpressionTree tree = new ExpressionTree();
-        tree.BuildFromInfix(health+attack);
-        tree.InorderTraversal();
-        health = tree.Evaluate().ToString();
-        UpdateHealth();
-    }
-
-    public void UpdateHealth(){
-        if(health == "0") {
-            RewardManager.Instance.EnemyKilled();
-            Destroy(gameObject); 
-        } else {
-            healthText.text = health;
-        }
-    }
-
     
-    void TakeTurn(Vector2 playerPosition)
+     protected override void TakeTurn(Vector2 playerPosition)
     {
         enemyTurn =  true;
         if(enemyTurn)
@@ -287,7 +226,7 @@ public class Enemy : MonoBehaviour
         //get player health to determine what operation to do
         
         StartCoroutine(AttackAnimationTimer());
-        AudioManager.Instance.PlayOneShotVariedPitch(shootSFX, 1f, SFXamg, .1f);
+        AudioManager.Instance.PlayOneShotVariedPitch(attackSFX, 1f, SFXamg, .1f);
         projectile.GetComponent<Projectile>().FireProjectile(velocity, this.gameObject);
     }
 

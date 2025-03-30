@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemyTrigger : MonoBehaviour
 {  
-    private Enemy enemy;
+    private BaseBoss enemy;
     void Start()
     {
-        enemy = gameObject.GetComponent<Enemy>();
+        enemy = gameObject.GetComponent<BaseBoss>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
