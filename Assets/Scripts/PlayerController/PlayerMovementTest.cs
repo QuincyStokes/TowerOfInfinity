@@ -45,8 +45,8 @@ public class PlayerMovementTest : MonoBehaviour
                 isMoving = false;
                 moveProgress = 0f;
 
-                // Optionally end player's turn here
-                // TurnManager.Instance.EndPlayerTurn();
+                // End player's turn after moving
+                //TurnManager.Instance.EndPlayerTurn();
             }
             else
             {
@@ -62,25 +62,13 @@ public class PlayerMovementTest : MonoBehaviour
 
         Vector3Int nextCell = wallTilemap.WorldToCell(nextPosition);
 
-        // Check if the target cell is blocked by a wall.
-        if (wallTilemap.GetTile(nextCell) != null)
+        if (wallTilemap.GetTile(nextCell) == null)
         {
-            Debug.Log("Move blocked by a wall at " + nextPosition);
-            return;
+            startPosition = transform.position;
+            targetPosition = nextPosition;
+            isMoving = true;
+            moveProgress = 0f;
         }
-
-        // Check if the target cell is reserved by an enemy.
-        if (EnemyTurnManager.Instance.IsCellReserved(nextCell))
-        {
-            Debug.Log("Move blocked! Tile " + nextPosition + " is reserved by an enemy.");
-            return;
-        }
-
-        // If the cell is free, allow movement.
-        startPosition = transform.position;
-        targetPosition = nextPosition;
-        isMoving = true;
-        moveProgress = 0f;
     }
 
     public bool IsMoving()
