@@ -5,6 +5,7 @@ public class EnemyMovementTest : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private Transform player; // Reference to the player
+    [SerializeField] private LayerMask enemyLayerMask;
     private const string WALL_TAG = "Wall";
 
     private bool isMoving = false;
@@ -39,12 +40,16 @@ public class EnemyMovementTest : MonoBehaviour
 
             if (moveProgress >= 1f)
             {
+                // Optional: Unreserve the old cell if you're tracking occupancy dynamically.
+                //Vector3Int oldCell = wallTilemap.WorldToCell(startPosition);
+                //EnemyTurnManager.Instance.UnreserveCell(oldCell);
+
                 transform.position = targetPosition;
                 isMoving = false;
                 moveProgress = 0f;
                 Debug.Log($"[{name}] Reached target position at {targetPosition}");
 
-                // Let the EnemyTurnManager know this enemy finished moving
+                // Continue to treat the new position as reserved (or update it based on your design).
                 EnemyTurnManager.Instance.EnemyFinishedAction();
             }
             else
@@ -53,6 +58,7 @@ public class EnemyMovementTest : MonoBehaviour
             }
         }
     }
+
 
     public void MoveOneStep()
     {
@@ -77,20 +83,36 @@ public class EnemyMovementTest : MonoBehaviour
 
         Debug.Log($"[{name}] Trying to move {direction} to {nextPosition}");
 
-        if (wallTilemap.GetTile(nextCell) == null && nextCell != playerCell)
-        {
-            startPosition = transform.position;
-            targetPosition = nextPosition;
-            isMoving = true;
-            moveProgress = 0f;
-
-            Debug.Log($"[{name}] Moving to {targetPosition}");
-        }
-        else
+        // Check if the cell is blocked by a wall or if the player occupies the cell.
+        if (wallTilemap.GetTile(nextCell) != null || nextCell == playerCell)
         {
             Debug.Log($"[{name}] Move blocked! Wall or player at {nextPosition}");
             EnemyTurnManager.Instance.EnemyFinishedAction();
+            return;
         }
+
+        // Reservation check: Is another enemy targeting this cell?
+        if (EnemyTurnManager.Instance.IsCellReserved(nextCell))
+        {
+            Debug.Log($"[{name}] Move blocked! Cell {nextCell} is already reserved by another enemy.");
+            EnemyTurnManager.Instance.EnemyFinishedAction();
+            return;
+        }
+
+        // Reserve the cell. If reservation fails for any reason, cancel move.
+        if (!EnemyTurnManager.Instance.ReserveCell(nextCell))
+        {
+            Debug.Log($"[{name}] Failed to reserve cell {nextCell}.");
+            EnemyTurnManager.Instance.EnemyFinishedAction();
+            return;
+        }
+
+        // Proceed with movement.
+        startPosition = transform.position;
+        targetPosition = nextPosition;
+        isMoving = true;
+        moveProgress = 0f;
+        Debug.Log($"[{name}] Moving to {targetPosition}");
     }
 
     private Vector2 GetBestDirection()

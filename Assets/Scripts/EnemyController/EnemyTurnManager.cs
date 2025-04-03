@@ -5,10 +5,13 @@ using UnityEngine;
 public class EnemyTurnManager : MonoBehaviour
 {
     public static EnemyTurnManager Instance { get; private set; }
-
+    
     private List<EnemyMovementTest> enemies = new List<EnemyMovementTest>();
     private int enemiesMoving = 0;
     private bool canEnemiesMove = false;
+
+    // New: Set to track reserved cells.
+    private HashSet<Vector3Int> reservedCells = new HashSet<Vector3Int>();
 
     private void Awake()
     {
@@ -40,7 +43,7 @@ public class EnemyTurnManager : MonoBehaviour
         canEnemiesMove = false;
     }
 
-     private IEnumerator EnemyTurnRoutine()
+    private IEnumerator EnemyTurnRoutine()
     {
         foreach (EnemyMovementTest enemy in enemies)
         {
@@ -69,7 +72,30 @@ public class EnemyTurnManager : MonoBehaviour
 
     private void EndEnemyTurn()
     {
+        // Clear reservations at the end of the enemy turn.
+        reservedCells.Clear();
         Debug.Log("[EnemyTurnManager] Enemy turn ended. Switching to player turn.");
         TurnManager.Instance.StartPlayerTurn();
+    }
+
+    // Reservation API
+    public bool IsCellReserved(Vector3Int cell)
+    {
+        return reservedCells.Contains(cell);
+    }
+
+    public bool ReserveCell(Vector3Int cell)
+    {
+        if (reservedCells.Contains(cell))
+        {
+            return false;
+        }
+        reservedCells.Add(cell);
+        return true;
+    }
+
+    public void UnreserveCell(Vector3Int cell)
+    {
+        reservedCells.Remove(cell);
     }
 }
