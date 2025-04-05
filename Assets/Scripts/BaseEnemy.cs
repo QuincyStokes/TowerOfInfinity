@@ -16,6 +16,7 @@ public abstract class BaseEnemy : MonoBehaviour
     public GameObject thisObject;
     public BoxCollider2D collider2d;
     public CircleCollider2D outerCollider2d;
+    public GameObject exclamationMark;
 
     [Header("SFX")]
     public AudioMixerGroup SFXamg;

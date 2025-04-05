@@ -39,12 +39,14 @@ public class Bosslev1 : BaseEnemy
         {
             if(mustAttack)
             {
+                exclamationMark.SetActive(false);
                 Attack(playerPosition);
                 mustAttack = false;
             }
             else
             {
                 // show exclamation mark
+                exclamationMark.SetActive(true);
                 mustAttack =true;
             }
         }
