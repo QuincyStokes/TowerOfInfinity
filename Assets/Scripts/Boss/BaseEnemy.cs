@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Audio;
 
-public abstract class BaseBoss : MonoBehaviour
+public abstract class BaseEnemy : MonoBehaviour
 {
     [Header("Properties")]
     public string health;

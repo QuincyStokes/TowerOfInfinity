@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using System.Collections.Generic;
 using UnityEngine.Audio;
 
-public class Bosslev1 : BaseBoss
+public class Bosslev1 : BaseEnemy
 {
     // Start is called before the first frame update
 

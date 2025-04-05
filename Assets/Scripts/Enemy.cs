@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine.Audio;
 using System.Collections;
 
-public class Enemy : BaseBoss
+public class Enemy : BaseEnemy
 {
 
     public GameObject projectilePrefab;

@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using System.Collections.Generic;
 using UnityEngine.Audio;
 
-public class Penguin : BaseBoss
+public class Penguin : BaseEnemy
 {
     new void Start()
     {
