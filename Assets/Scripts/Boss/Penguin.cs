@@ -24,6 +24,9 @@ public class Penguin : BaseEnemy
         if(enemyTurn)
         {
             Walk(playerPosition);
+            //if distance to player == 1, attack
+            // else if distance = =2, walk
+            //else, slide
         }
         if(enemyTurn)
         {
@@ -32,15 +35,23 @@ public class Penguin : BaseEnemy
     }
     private void Walk(Vector2 playerPosition)
     {
-
+        animator.SetTrigger("Walk");
+        
     }
     private void Slide()
     {
-        
+        animator.SetTrigger("Slide");
+        //slides in the direction of the player, stops when it collides with something
+            //when it hits something he stops (will rely on OnTriggerEnter to stop)
+
+        animator.SetTrigger("StopAnimation");
     }
     private void Attack(Vector2 playerPosition)
     {
-        
+        animator.SetTrigger("Attack");
+        //he has an attack hitbox
+            //change it towards the player
+            //enable it, wait a tiny bit of time, then disable it
     }
 }
 
