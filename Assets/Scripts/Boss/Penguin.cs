@@ -17,20 +17,25 @@ public class Penguin : BaseEnemy
     protected override void TakeTurn(Vector2 playerPosition)
     {
         enemyTurn =  true;
-        if(enemyTurn)
+
+        float distance = Vector2.Distance(transform.position, playerPosition);
+
+        if(mustAttack) //attack
         {
-            Slide();
+            HideExclamation();
+            Attack(playerPosition);
         }
-        if(enemyTurn)
+        else if(distance < 2) //ready an attack
+        {
+            ShowExclamation();
+        }
+        else if(distance < 3)
         {
             Walk(playerPosition);
-            //if distance to player == 1, attack
-            // else if distance = =2, walk
-            //else, slide
         }
-        if(enemyTurn)
+        else
         {
-            Attack(playerPosition);
+            Slide(playerPosition);
         }
     }
     private void Walk(Vector2 playerPosition)
@@ -38,13 +43,16 @@ public class Penguin : BaseEnemy
         animator.SetTrigger("Walk");
         
     }
-    private void Slide()
+    private void Slide(Vector2 playerPosition)
     {
         animator.SetTrigger("Slide");
+        animator.SetBool("IsSliding", true);
         //slides in the direction of the player, stops when it collides with something
             //when it hits something he stops (will rely on OnTriggerEnter to stop)
 
         animator.SetTrigger("StopAnimation");
+        animator.SetBool("IsSliding", false);
+
     }
     private void Attack(Vector2 playerPosition)
     {

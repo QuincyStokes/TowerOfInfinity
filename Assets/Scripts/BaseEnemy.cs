@@ -74,6 +74,18 @@ public abstract class BaseEnemy : MonoBehaviour
             healthText.text = health;
         }
     }
+    public void ShowExclamation()
+    {
+        mustAttack = true;
+        exclamationMark.SetActive(true);
+    }
+
+    public void HideExclamation()
+    {
+        mustAttack = false;
+        exclamationMark.SetActive(false);
+    }
+
     protected abstract void TakeTurn(Vector2 playerPosition);
 
 

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7466978205715505227}
   - component: {fileID: 2194093925387877158}
   - component: {fileID: 367376007358743960}
-  - component: {fileID: 6322711187338896761}
   - component: {fileID: 1896872966674608069}
+  - component: {fileID: 651347258131144120}
   m_Layer: 0
   m_Name: Penguin
   m_TagString: Untagged
@@ -99,31 +99,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6322711187338896761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3561451263486795000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e15e84cd71862b4e9eafc7611065e15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 101
-  moveTime: 0.1
-  animator: {fileID: 3244282560369222534}
-  thisObject: {fileID: 3945672830737022846}
-  collider2d: {fileID: 8745446666746812140}
-  outerCollider2d: {fileID: 2194093925387877158}
-  exclamationMark: {fileID: 7765868118542708893}
-  SFXamg: {fileID: 0}
-  attackSFX: {fileID: 0}
-  projectilePrefab: {fileID: 6864133168397460374, guid: bdfbbe46737b4984e808436e204a2262, type: 3}
-  projectileLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &1896872966674608069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +111,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d684f344cde438f4a938d496c27db0e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &651347258131144120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3561451263486795000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc069a176aabbe42b455c21ea9638b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 
+  moveTime: 0.1
+  animator: {fileID: 3244282560369222534}
+  thisObject: {fileID: 3561451263486795000}
+  collider2d: {fileID: 8745446666746812140}
+  outerCollider2d: {fileID: 2194093925387877158}
+  exclamationMark: {fileID: 7765868118542708893}
+  SFXamg: {fileID: 0}
+  attackSFX: {fileID: 0}
 --- !u!1 &3945672830737022846
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +276,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.46545455, y: 0.46545455}
+    oldSize: {x: 0.42666668, y: 0.42666668}
     newSize: {x: 0.32, y: 0.21}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

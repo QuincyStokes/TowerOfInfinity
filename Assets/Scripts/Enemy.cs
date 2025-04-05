@@ -97,15 +97,13 @@ public class Enemy : BaseEnemy
         {
             if(mustAttack)
             {
-                exclamationMark.SetActive(false);
+                HideExclamation();
                 Attack(playerPosition);
-                mustAttack = false;
             }
             else
             {
                 // show exclamation mark
-                exclamationMark.SetActive(true);
-                mustAttack =true;
+                ShowExclamation();
             }
         }
     }
