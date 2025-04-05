@@ -89,13 +89,24 @@ public class Enemy : BaseEnemy
      protected override void TakeTurn(Vector2 playerPosition)
     {
         enemyTurn =  true;
-        if(enemyTurn)
+        if(enemyTurn && !mustAttack)
         {
             Move(playerPosition);
         }
         if(enemyTurn)
         {
-            Attack(playerPosition);
+            if(mustAttack)
+            {
+                exclamationMark.SetActive(false);
+                Attack(playerPosition);
+                mustAttack = false;
+            }
+            else
+            {
+                // show exclamation mark
+                exclamationMark.SetActive(true);
+                mustAttack =true;
+            }
         }
     }
 
