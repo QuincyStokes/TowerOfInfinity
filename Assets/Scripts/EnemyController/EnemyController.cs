@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [RequireComponent(typeof(EnemyHealth))]
 [RequireComponent(typeof(EnemyAttack))]
@@ -19,10 +20,16 @@ public class EnemyController : MonoBehaviour
     [SerializeField] public AudioMixerGroup SFXamg;
     [SerializeField] public AudioClip attackSFX;
 
+
+    //ADDED REFERENCE DECLARATIONS
+    private EnemyHealth enemyHealth;
+    private EnemyAttack enemyAttack;
+    private EnemyMovementTest enemyMovementTest;
+
     private void Awake(){
         enemyHealth = GetComponent<EnemyHealth>();
         enemyAttack = GetComponent<EnemyAttack>();
-        EnemyMovementTest = GetComponent<EnemyMovementTest>();
+        enemyMovementTest = GetComponent<EnemyMovementTest>();
     }
 
     // Start is called before the first frame update
@@ -38,7 +45,7 @@ public class EnemyController : MonoBehaviour
     }
 
     public void TakeTurn(Vector3 playerPosition){
-        float distanceToPlayer = Vector2.Distancce(transform.position, playerPosition);
+        float distanceToPlayer = Vector2.Distance(transform.position, playerPosition);
 
         if (distanceToPlayer <= 2f){
             //EVENTUALLY INCLUDE THE QUESTION MARK BEFORE ATTACKING
@@ -49,13 +56,14 @@ public class EnemyController : MonoBehaviour
     }
 
     private IEnumerator MoveTurn(Vector3 targetPosition){
-        EnemyMovementTest.MoveOneStep();
+        enemyMovementTest.MoveOneStep();
         yield return new WaitForSeconds(0.5f);
         EnemyTurnManager.Instance.EnemyFinishedAction();
     }
 
     private IEnumerator AttackTurn(Vector3 targetPosition){
-        enemyAttack.Attack();
+        //COMMENTED OUT BECAUSE NOT IMPLEMENTED YET
+        //enemyAttack.Attack();
         yield return new WaitForSeconds(0.5f);
         EnemyTurnManager.Instance.EnemyFinishedAction();
     }
