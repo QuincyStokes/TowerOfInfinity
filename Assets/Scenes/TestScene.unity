@@ -3289,7 +3289,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.3554373, y: 44.5, z: -10}
+  m_LocalPosition: {x: 4.356, y: 44.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4208,13 +4208,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5592110711346520940, guid: a7034a3e693c7764d9ad58f3a37c8221, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5649321000816780483, guid: a7034a3e693c7764d9ad58f3a37c8221, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1967309442}
+    - target: {fileID: 5649321000816780483, guid: a7034a3e693c7764d9ad58f3a37c8221, type: 3}
+      propertyPath: enemyLayerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 7434297748150756896, guid: a7034a3e693c7764d9ad58f3a37c8221, type: 3}
       propertyPath: m_Name
       value: Test Enemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434297748150756896, guid: a7034a3e693c7764d9ad58f3a37c8221, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8420867771377100161, guid: a7034a3e693c7764d9ad58f3a37c8221, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5279,13 +5291,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5592110711346520940, guid: a7034a3e693c7764d9ad58f3a37c8221, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5649321000816780483, guid: a7034a3e693c7764d9ad58f3a37c8221, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1967309442}
+    - target: {fileID: 5649321000816780483, guid: a7034a3e693c7764d9ad58f3a37c8221, type: 3}
+      propertyPath: enemyLayerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 7434297748150756896, guid: a7034a3e693c7764d9ad58f3a37c8221, type: 3}
       propertyPath: m_Name
       value: Test Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434297748150756896, guid: a7034a3e693c7764d9ad58f3a37c8221, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8420867771377100161, guid: a7034a3e693c7764d9ad58f3a37c8221, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6235,6 +6259,7 @@ MonoBehaviour:
   - {fileID: 7835436065751301536, guid: 50fc84e4581971642aed5a5422c52322, type: 3}
   tier2DivisionRewards:
   - {fileID: 7835436065751301536, guid: 7dc496258aa4c3047bb8e1358aa34367, type: 3}
+  tier2HasPotionRewards: []
   tier1Wieght: 5
   tier1Rewards:
   - {fileID: 1454734714088842638, guid: b73d875c54b58144d924b9d1428e7c8f, type: 3}
@@ -7810,7 +7835,7 @@ Transform:
   m_GameObject: {fileID: 1379693495}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.3554373, y: 44.5, z: -10}
+  m_LocalPosition: {x: 4.356, y: 44.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10857,13 +10882,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5592110711346520940, guid: a7034a3e693c7764d9ad58f3a37c8221, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5649321000816780483, guid: a7034a3e693c7764d9ad58f3a37c8221, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1967309442}
+    - target: {fileID: 5649321000816780483, guid: a7034a3e693c7764d9ad58f3a37c8221, type: 3}
+      propertyPath: enemyLayerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 7434297748150756896, guid: a7034a3e693c7764d9ad58f3a37c8221, type: 3}
       propertyPath: m_Name
       value: Test Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434297748150756896, guid: a7034a3e693c7764d9ad58f3a37c8221, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8420867771377100161, guid: a7034a3e693c7764d9ad58f3a37c8221, type: 3}
       propertyPath: m_LocalPosition.x
