@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Collections;
 using UnityEditor;
-using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 public class TilemapSetup : MonoBehaviour
@@ -31,7 +30,6 @@ public class TilemapSetup : MonoBehaviour
     public TileBase boundaryTile;
     private List<GameObject> toBeDestroyedOnReset;
     private int maxNumRooms;
-
 
 
     void Awake()
