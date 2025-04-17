@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -6,23 +7,23 @@ public class EnemyHealth : MonoBehaviour
 
     [Header("General Settings")]
     [SerializeField] private string enemyName = "Enemy";
-    
+
     [Header("Health Settings")]
     [SerializeField] public int maxHealth = 10;
     [SerializeField] public string health;
 
     #endregion
 
+    [Header("UI References")]
+    [SerializeField] private TMP_Text healthText;
+
     private void Awake()
     {
         health = CalculateHealth();
+        UpdateHealthDisplay();
         Debug.Log($"{enemyName} initialized with health: {health}");
     }
 
-    /// <summary>
-    /// Calculates the enemy's health based on the current level and enemy count.
-    /// </summary>
-    /// <returns>A string representing the enemy's health.</returns>
     private string CalculateHealth()
     {
         int currentLevel = GameManager.instance.GetCurrentLevel();
@@ -37,11 +38,11 @@ public class EnemyHealth : MonoBehaviour
         else if (currentLevel == 2)
         {
             n = Random.Range(1, 100);
-            if (n < 25) // 25% chance for positive health
+            if (n < 25)
             {
                 result = ((int)Random.Range(4 + numEnemy / 1.5f, numEnemy * 1.6f + 7)).ToString();
             }
-            else // 75% chance for negative health
+            else
             {
                 result = ((int)Random.Range(-numEnemy * 1.5f - 4, -numEnemy / 1.5f - 2)).ToString();
             }
@@ -58,7 +59,6 @@ public class EnemyHealth : MonoBehaviour
             }
             else
             {
-                // Avoid trivial fractions and prime denominators.
                 while (upper % lower == 0 || IsPrime(lower))
                 {
                     lower++;
@@ -82,7 +82,6 @@ public class EnemyHealth : MonoBehaviour
             }
             else
             {
-                // Avoid trivial fractions and prime denominators.
                 while (upper % lower == 0 || IsPrime(lower))
                 {
                     lower++;
@@ -96,18 +95,12 @@ public class EnemyHealth : MonoBehaviour
         }
         else
         {
-            // Fallback if currentLevel doesn't match.
             result = maxHealth.ToString();
         }
 
         return result;
     }
 
-    /// <summary>
-    /// Checks if a given number is prime.
-    /// </summary>
-    /// <param name="number">The number to check.</param>
-    /// <returns>True if the number is prime; otherwise, false.</returns>
     private bool IsPrime(int number)
     {
         if (number <= 1)
@@ -126,5 +119,20 @@ public class EnemyHealth : MonoBehaviour
         return true;
     }
 
-    // Future methods (e.g., TakeDamage, Heal) can be added here to modify health during gameplay.
+    private void UpdateHealthDisplay()
+    {
+        if (healthText == null)
+        {
+            healthText = GetComponentInChildren<TMP_Text>();
+        }
+
+        if (healthText != null)
+        {
+            healthText.text = health;
+        }
+        else
+        {
+            Debug.LogWarning($"{enemyName} is missing a TMP_Text component to display health.");
+        }
+    }
 }

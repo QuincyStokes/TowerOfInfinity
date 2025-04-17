@@ -19,7 +19,7 @@ public class WeaponHandler : MonoBehaviour
     public Image[] weaponIconsUI;
     public Sprite[] weaponIcons;
     public SpriteRenderer heldWeaponImage;
-    public Sprite unselectedFrame;
+    public Sprite unselectedFrame;  
     public Sprite selectedFrame;
 
     // Start is called before the first frame update
