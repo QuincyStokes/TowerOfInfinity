@@ -24,6 +24,12 @@ public class EnemyController : MonoBehaviour
     private EnemyMovementTest enemyMovement;
 
 
+
+    //ADDED REFERENCE DECLARATIONS
+    private EnemyHealth enemyHealth;
+    private EnemyAttack enemyAttack;
+    private EnemyMovementTest enemyMovementTest;
+
     private void Awake(){
         enemyHealth = GetComponent<EnemyHealth>();
         enemyAttack = GetComponent<EnemyAttack>();
@@ -60,7 +66,8 @@ public class EnemyController : MonoBehaviour
     }
 
     private IEnumerator AttackTurn(Vector3 targetPosition){
-        enemyAttack.Attack();
+        //COMMENTED OUT BECAUSE NOT IMPLEMENTED YET
+        //enemyAttack.Attack();
         yield return new WaitForSeconds(0.5f);
         EnemyTurnManager.Instance.EnemyFinishedAction();
     }

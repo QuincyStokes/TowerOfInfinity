@@ -9,8 +9,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private string enemyName = "Enemy";
 
     [Header("Health Settings")]
-    [SerializeField] public int maxHealth = 10;
-    [SerializeField] public string health;
+    [SerializeField] private int maxHealth = 10;
+    [SerializeField] private string health;
 
     #endregion
 
