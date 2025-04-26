@@ -362,6 +362,4 @@ MonoBehaviour:
   description: Get a potion that increases your health by 2
   confirmSFX: {fileID: 0}
   UIamg: {fileID: 0}
-  potionValue: 2
-  ifHasPotionDescription: 'Increase potion strength by '
-  potionStrengthIncrease: 
+  potionValue: 4

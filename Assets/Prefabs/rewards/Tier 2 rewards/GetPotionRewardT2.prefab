@@ -362,4 +362,4 @@ MonoBehaviour:
   description: Get a potion that increases your health by 4
   confirmSFX: {fileID: 0}
   UIamg: {fileID: 0}
-  potionValue: 4
+  potionValue: 10
