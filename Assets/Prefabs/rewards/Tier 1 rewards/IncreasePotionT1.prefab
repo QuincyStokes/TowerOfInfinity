@@ -153,7 +153,7 @@ MonoBehaviour:
   description: Increase potion health by 25
   confirmSFX: {fileID: 8300000, guid: c5cb2ac29e89dbf43a9b644caaad45e6, type: 3}
   UIamg: {fileID: 24300002, guid: 7e4d1e11053ed7644b10d39f4a58cc2b, type: 2}
-  value: 25
+  value: 20
 --- !u!1 &3553594203347106783
 GameObject:
   m_ObjectHideFlags: 0

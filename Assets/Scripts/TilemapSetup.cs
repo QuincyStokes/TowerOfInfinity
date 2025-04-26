@@ -65,7 +65,7 @@ public class TilemapSetup : MonoBehaviour
 
     private void InitializeGridPositions(int level)
     {
-        maxRoomsLength=2+level*4;
+        maxRoomsLength=4+level*2;
         gridPositions = new int[maxRoomsLength, maxRoomsLength]; // values default to 0
         
     }
@@ -77,7 +77,7 @@ public class TilemapSetup : MonoBehaviour
         {
             Destroy(go);
         }
-        maxNumRooms=2+level*4;
+        maxNumRooms=4+level*2;
         numRooms = maxNumRooms;
     }
 

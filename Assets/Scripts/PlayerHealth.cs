@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
 
         //TESTING
         hasPotion = true;
-        ChangePotionHealth("+25");
+        ChangePotionHealth("+5");
     }
 
     private void Update()
