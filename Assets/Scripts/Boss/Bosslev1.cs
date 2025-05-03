@@ -24,7 +24,6 @@ public class Bosslev1 : BaseEnemy
 
     new void Start()
     {
-        health = "66";
         base.Start();
     }
     protected override void TakeTurn(Vector2 playerPosition)

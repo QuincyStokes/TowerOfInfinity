@@ -65,7 +65,7 @@ public class TilemapSetup : MonoBehaviour
 
     private void InitializeGridPositions(int level)
     {
-        maxRoomsLength=4+level*2;
+        maxRoomsLength=6+level*2;
         gridPositions = new int[maxRoomsLength, maxRoomsLength]; // values default to 0
         
     }
@@ -77,7 +77,7 @@ public class TilemapSetup : MonoBehaviour
         {
             Destroy(go);
         }
-        maxNumRooms=4+level*2;
+        maxNumRooms=6+level*2;
         numRooms = maxNumRooms;
     }
 
@@ -339,7 +339,7 @@ public class TilemapSetup : MonoBehaviour
                 bossHealth = "66";
                 break;
             case 2:
-                bossHealth = "-88";
+                bossHealth = "-77";
                 break;
             case 3:
                 bossHealth = "101/105";
