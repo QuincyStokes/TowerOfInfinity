@@ -123,8 +123,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: WeaponLevelUp, Assembly-CSharp
+      - m_Target: {fileID: 5414792565428536190}
+        m_TargetAssemblyTypeName: IncreasePotion, Assembly-CSharp
         m_MethodName: Reward
         m_Mode: 1
         m_Arguments:
@@ -150,7 +150,7 @@ MonoBehaviour:
   buttonIcon: {fileID: 6871980638724008187}
   descriptionText: {fileID: 3152766449389507167}
   icon: {fileID: 8145951374611147372, guid: ca1fe683d8872314481b6dbcd87cb1d1, type: 3}
-  description: Increase potion health by 25
+  description: Increase potion health by 20
   confirmSFX: {fileID: 8300000, guid: c5cb2ac29e89dbf43a9b644caaad45e6, type: 3}
   UIamg: {fileID: 24300002, guid: 7e4d1e11053ed7644b10d39f4a58cc2b, type: 2}
   value: 20
