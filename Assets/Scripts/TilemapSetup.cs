@@ -160,7 +160,7 @@ public class TilemapSetup : MonoBehaviour
                     prevRoomTilemap.SetTile(new Vector3Int(roomWidth/2 +1, roomWidth-1), null);
                 }
                 currentY++;
-                GenerateBossRoom(currentX, currentY);
+                GenerateBossRoom(currentX, currentY, GameManager.instance.GetCurrentLevel());
                 return;
             }
 
@@ -328,10 +328,33 @@ public class TilemapSetup : MonoBehaviour
         
     }
 
-    private void GenerateBossRoom(int x, int y)
+    private void GenerateBossRoom(int x, int y, int level)
     {
         GameObject bossRoom = Instantiate(level1BossRoom, new Vector2(x * roomWidth-1, y * roomWidth), Quaternion.identity, mainGrid.transform);
         GameObject boss = Instantiate(level1Boss, new Vector2(x * roomWidth + roomWidth/2, y * roomWidth + roomWidth/2), Quaternion.identity);
+
+        string bossHealth;
+        switch(level){
+            case 1:
+                bossHealth = "66";
+                break;
+            case 2:
+                bossHealth = "-88";
+                break;
+            case 3:
+                bossHealth = "101/105";
+                break;
+            case 4:
+                bossHealth = "999999";
+                break;
+            default:
+                bossHealth = "100";
+                break;
+        }
+
+        boss.GetComponent<Bosslev1>().health = bossHealth;
+        
+        
         toBeDestroyedOnReset.Add(bossRoom);
         toBeDestroyedOnReset.Add(boss);
 

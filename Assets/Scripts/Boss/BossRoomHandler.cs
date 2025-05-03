@@ -24,14 +24,6 @@ public class BossRoomHandler : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            OpenDoor();
-        }
-    }
-
 
     public void OpenDoor()
     {
