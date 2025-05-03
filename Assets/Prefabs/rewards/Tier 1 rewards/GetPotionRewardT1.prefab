@@ -359,7 +359,7 @@ MonoBehaviour:
   buttonIcon: {fileID: 586901623457209856}
   descriptionText: {fileID: 5301748049009370345}
   icon: {fileID: 8145951374611147372, guid: ca1fe683d8872314481b6dbcd87cb1d1, type: 3}
-  description: Get a potion that increases your health by 10
+  description: Get a potion that increases your health by 25
   confirmSFX: {fileID: 0}
   UIamg: {fileID: 0}
   potionValue: 25
