@@ -64,9 +64,8 @@ public abstract class BaseEnemy : MonoBehaviour
         UpdateHealth();
     }
 
-    public void UpdateHealth(){
+    public virtual void UpdateHealth(){
         if(health == "0") {
-            BossRoomHandler.Instance.OpenDoor();
             RewardManager.Instance.EnemyKilled();
             Destroy(gameObject);
             

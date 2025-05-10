@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using System.Collections.Generic;
 using UnityEngine.Audio;
 
-public class Bosslev1 : BaseEnemy
+public class DinoBoss : BaseEnemy
 {
     // Start is called before the first frame update
 
@@ -49,8 +49,19 @@ public class Bosslev1 : BaseEnemy
             }
         }
     }
-   
 
+    public override void UpdateHealth()
+    {
+        if(health == "0") {
+            BossRoomHandler.Instance.OpenDoor();
+            RewardManager.Instance.EnemyKilled();
+            Destroy(gameObject);
+            
+        } else {
+            healthText.text = health;
+        }
+        
+    }
     
     void Move(Vector2 playerPosition) {
        

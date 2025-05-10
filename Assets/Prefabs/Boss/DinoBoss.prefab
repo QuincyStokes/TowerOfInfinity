@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6322711187338896761}
   - component: {fileID: 1896872966674608069}
   m_Layer: 0
-  m_Name: Bosslev1
+  m_Name: DinoBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

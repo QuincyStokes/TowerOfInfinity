@@ -18,7 +18,7 @@ public class Hitbox : MonoBehaviour
                 enemy.ChangeHealth(playerAttack.performOperation());
                 return;
             }
-            Bosslev1 boss = other.gameObject.GetComponentInParent<Bosslev1>();
+            DinoBoss boss = other.gameObject.GetComponentInParent<DinoBoss>();
             if(boss != null)
             {
                 boss.ChangeHealth(playerAttack.performOperation());
