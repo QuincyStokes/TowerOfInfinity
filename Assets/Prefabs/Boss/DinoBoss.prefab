@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 101
-  moveTime: 0.1
+  moveTime: 0.08
   animator: {fileID: 3244282560369222534}
   thisObject: {fileID: 3945672830737022846}
   collider2d: {fileID: 8745446666746812140}

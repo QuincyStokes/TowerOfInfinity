@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
-  moveTime: 0.1
+  moveTime: 0.08
   animator: {fileID: 728666125635954205}
   thisObject: {fileID: 4880232668136982583}
   collider2d: {fileID: 2317504115274444580}
@@ -535,7 +535,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
+    oldSize: {x: 0.42666668, y: 0.42666668}
     newSize: {x: 0.32, y: 0.21}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

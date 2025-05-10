@@ -2247,6 +2247,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1301358250}
     - target: {fileID: 4351451217219616346, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
+      propertyPath: moveTime
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351451217219616346, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 6930069}
