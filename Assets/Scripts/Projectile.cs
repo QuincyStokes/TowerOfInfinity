@@ -42,11 +42,11 @@ public class Projectile : MonoBehaviour
         }
         else if(playerHealth[0] == '-')
         {
-            damage = '+' + ((int)(UnityEngine.Random.Range(1, 4) * 2)).ToString(); //currently doesn't take into account the level
+            damage = '+' + ((int)UnityEngine.Random.Range(1, 8)).ToString(); //currently doesn't take into account the level
         }
         else
         {
-            damage = '-' + ((int)(UnityEngine.Random.Range(1, 4) * 2)).ToString(); //currently doesn't take into account the level
+            damage = '-' + ((int)UnityEngine.Random.Range(1, 8)).ToString(); //currently doesn't take into account the level
         }
         UpdateDamage();
 
