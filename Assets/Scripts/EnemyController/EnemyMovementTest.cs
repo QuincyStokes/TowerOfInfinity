@@ -60,18 +60,27 @@ public class EnemyMovementTest : MonoBehaviour
     }
 
 
-    public void MoveOneStep()
+    void MoveOneStep()
     {
-        if (!isMoving)
+        Vector3 direction = directions[Random.Range(0, directions.Length)];
+        Vector3 nextPosition = transform.position + direction;
+
+        // Check for a wall using OverlapBox
+        Collider2D hit = Physics2D.OverlapBox(nextPosition, Vector2.one * 0.1f, 0f);
+
+        if (hit != null && hit.CompareTag("Wall"))
         {
-            Debug.Log($"[{name}] Attempting to move...");
-            TryMove(GetBestDirection());
+            // Blocked by a wall, skip move
+            return;
         }
-        else
-        {
-            Debug.Log($"[{name}] Already moving, cannot move again.");
-        }
+
+        // Move to the next position
+        startPosition = transform.position;
+        targetPosition = new Vector3(nextPosition.x, nextPosition.y, transform.position.z);
+        moveProgress = 0f;
+        isMoving = true;
     }
+
 
     private void TryMove(Vector2 direction)
     {
