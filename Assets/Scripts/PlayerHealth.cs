@@ -57,6 +57,7 @@ public class PlayerHealth : MonoBehaviour
     } 
     public void ChangeHealth(string attack)
     {
+        if (GameManager.instance.easyMode) return;
         ExpressionTree tree = new ExpressionTree();
         tree.BuildFromInfix(health+attack);
         tree.InorderTraversal();
