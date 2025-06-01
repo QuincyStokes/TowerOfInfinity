@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour {
     private static PlayerAnimation playerAnimation;
     public static int currentDirection;
     public TilemapSetup tilemapSetup;
-    public GameObject pauseMenu;
     [Header("Sound Effects")]
     public AudioMixerGroup SFXamg;
     public AudioClip footstepSFX;
