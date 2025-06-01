@@ -17,6 +17,7 @@ public class WeaponHandler : MonoBehaviour
     public TMP_Text[] weaponLevelText;
     public Image[] Frames;
     public Image[] weaponIconsUI;
+    public TMP_Text[] weaponOperationUI;
     public Sprite[] weaponIcons;
     public SpriteRenderer heldWeaponImage;
     public Sprite unselectedFrame;
@@ -106,7 +107,8 @@ public class WeaponHandler : MonoBehaviour
 
     public void UnlockWeapons(int weapon)
     {
-        weaponIconsUI[weapon-1].sprite = weaponIcons[weapon-1];
+        weaponIconsUI[weapon - 1].sprite = weaponIcons[weapon - 1];
+        weaponOperationUI[weapon - 1].gameObject.SetActive(true);
     }
     
 }
