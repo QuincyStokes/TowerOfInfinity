@@ -46,6 +46,11 @@ public class PlayerMovement : MonoBehaviour {
         GameManager.beatLevel += ResetPlayerPosition;
     }
 
+    private void OnDestroy()
+    {
+        GameManager.beatLevel -= ResetPlayerPosition;
+    }
+
     // Update is called once per frame
     void Update() {
         if(!movementLocked)

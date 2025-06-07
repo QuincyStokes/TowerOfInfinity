@@ -45,6 +45,12 @@ public class WeaponHandler : MonoBehaviour
 
     }
 
+    private void OnDestroy()
+    {
+        GameManager.beatLevel -= UnlockWeapons;
+    }
+
+
     // Update is called once per frame
     void Update()
     {
