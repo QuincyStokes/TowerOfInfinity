@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class MenuButtons : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class MenuButtons : MonoBehaviour
     {
         Application.Quit();
     }
-
     public void ResumeGame(GameObject pauseMenu)
     {
         Time.timeScale = 1;

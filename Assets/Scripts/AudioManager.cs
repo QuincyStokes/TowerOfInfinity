@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private List<AudioClip> backgroundMusic;
     private List<AudioSource> audioSourcePool;
     private bool backgroundMusicPlaying;
+    [SerializeField] private AudioMixer masterMixer;
+    [SerializeField] private Slider volumeSlider;
+    public string exposedVolumeParameterString = "Volume";
 
 
     private void Awake()
@@ -39,14 +43,14 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        if(backgroundMusicPlaying == false)
+        if (backgroundMusicPlaying == false)
         {
             backgroundMusicPlaying = true;
             AudioClip backgroundMusicToPlay = backgroundMusic[Random.Range(0, backgroundMusic.Count)];
             StartCoroutine(SongCooldown(backgroundMusicToPlay));
             Debug.Log($"Playing song {backgroundMusicToPlay.name} at 5% volume");
             PlayOneShot(backgroundMusicToPlay, 1f, backgroundAMG);
-        }   
+        }
     }
 
     private void InitializeAudioSourcePool()
@@ -64,14 +68,15 @@ public class AudioManager : MonoBehaviour
     public void PlayOneShot(AudioClip clip, float volume, AudioMixerGroup mixerGroup, AudioSource audioSource = null)
     {
         AudioSource source;
-        if(audioSource == null)
+        if (audioSource == null)
         {
             source = GetAvailableSource();
         }
-        else{
+        else
+        {
             source = audioSource;
         }
-        
+
         source.clip = clip;
         source.outputAudioMixerGroup = mixerGroup;
         source.volume = volume;
@@ -98,7 +103,7 @@ public class AudioManager : MonoBehaviour
         source.outputAudioMixerGroup = mixerGroup;
         source.volume = volume;
         source.spatialBlend = 0f; // 2D by default; adjust as needed
-        source.pitch = Random.Range(1-pitchOffset, 1+pitchOffset);
+        source.pitch = Random.Range(1 - pitchOffset, 1 + pitchOffset);
         source.PlayOneShot(clip);
     }
 
@@ -106,5 +111,19 @@ public class AudioManager : MonoBehaviour
     {
         yield return new WaitForSeconds(clip.length);
         backgroundMusicPlaying = false;
+    }
+
+    public void HandleVolumeSliderChanged()
+    {
+        float mixerVolume = Mathf.Log10(Mathf.Max(0.0001f, volumeSlider.value)) * 20;
+        masterMixer.SetFloat(exposedVolumeParameterString, mixerVolume);
+        print($"Set volume of master mixer to {mixerVolume}");
+    }
+
+    public void HandleVolumeSliderChanged(float num)
+    {
+        float mixerVolume = Mathf.Log10(Mathf.Max(0.0001f, num)) * 20;
+        masterMixer.SetFloat(exposedVolumeParameterString, mixerVolume);
+        print($"Set volume of master mixer to {mixerVolume}");
     }
 }
