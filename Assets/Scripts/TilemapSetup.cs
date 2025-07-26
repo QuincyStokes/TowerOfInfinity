@@ -341,7 +341,7 @@ public class TilemapSetup : MonoBehaviour
                 bossHealth = "-77";
                 break;
             case 3:
-                bossHealth = "101/105";
+                bossHealth = "101/108";
                 break;
             case 4:
                 bossHealth = "999999";
