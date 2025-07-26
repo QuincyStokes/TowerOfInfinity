@@ -351,7 +351,7 @@ public class TilemapSetup : MonoBehaviour
                 break;
         }
 
-        boss.GetComponent<DinoBoss>().health = bossHealth;
+        boss.GetComponent<BaseEnemy>().health = bossHealth;
         
         
         toBeDestroyedOnReset.Add(bossRoom);

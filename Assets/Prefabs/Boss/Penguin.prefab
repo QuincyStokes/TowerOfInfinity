@@ -123,15 +123,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc069a176aabbe42b455c21ea9638b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 
+  health: 100
   moveTime: 0.1
   animator: {fileID: 3244282560369222534}
-  thisObject: {fileID: 3561451263486795000}
+  thisObject: {fileID: 3945672830737022846}
   collider2d: {fileID: 8745446666746812140}
   outerCollider2d: {fileID: 2194093925387877158}
   exclamationMark: {fileID: 7765868118542708893}
   SFXamg: {fileID: 0}
   attackSFX: {fileID: 0}
+  projectileLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &3945672830737022846
 GameObject:
   m_ObjectHideFlags: 0
