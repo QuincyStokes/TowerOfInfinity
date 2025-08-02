@@ -18,7 +18,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private List<AudioClip> backgroundMusic;
     private List<AudioSource> audioSourcePool;
     private bool backgroundMusicPlaying;
-    [SerializeField] private AudioMixer masterMixer;
+    public AudioMixer masterMixer;
     [SerializeField] private Slider volumeSlider;
     public string exposedVolumeParameterString = "Volume";
 
@@ -122,8 +122,8 @@ public class AudioManager : MonoBehaviour
 
     public void HandleVolumeSliderChanged(float num)
     {
-        float mixerVolume = Mathf.Log10(Mathf.Max(0.0001f, num)) * 20;
-        masterMixer.SetFloat(exposedVolumeParameterString, mixerVolume);
-        print($"Set volume of master mixer to {mixerVolume}");
+        //float mixerVolume = Mathf.Log10(Mathf.Max(0.0001f, num)) * 20;
+        masterMixer.SetFloat(exposedVolumeParameterString, num);
+        print($"Set volume of master mixer to {num}");
     }
 }

@@ -29,19 +29,23 @@ public class PlayerMovement : MonoBehaviour {
     
     public delegate void PlayerMoved(Vector2 playerPosition);
     public static event PlayerMoved OnPlayerMoved;
-    void Start() {
-        playerAnimation=GetComponent<PlayerAnimation>();
-         //Get a component reference to this object's BoxCollider2D
-        boxCollider = GetComponent <BoxCollider2D> ();
+    void Start()
+    {
+        playerAnimation = GetComponent<PlayerAnimation>();
+        //Get a component reference to this object's BoxCollider2D
+        boxCollider = GetComponent<BoxCollider2D>();
 
         //Get a component reference to this object's Rigidbody2D
-        rb2D = GetComponent <Rigidbody2D> ();
+        rb2D = GetComponent<Rigidbody2D>();
 
         //By storing the reciprocal of the move time we can use it by multiplying instead of dividing, this is more efficient.
         inverseMoveTime = 1f / moveTime;
 
         //lets set the player's position in the center of the tile room
         transform.position = new Vector3(3.5f, 3.5f);
+
+        //Unlock the movement incase it was locked elsewhere
+        movementLocked = false;
 
         GameManager.beatLevel += ResetPlayerPosition;
     }

@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         //boardScript = GetComponent<BoardManager>();
         //tilemapSetup = GetComponent<TilemapSetup>();
 
-
+        Time.timeScale = 1f;
     }
     void Start()
     {
