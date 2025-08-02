@@ -115,15 +115,13 @@ public class AudioManager : MonoBehaviour
 
     public void HandleVolumeSliderChanged()
     {
-        float mixerVolume = Mathf.Log10(Mathf.Max(0.0001f, volumeSlider.value)) * 20;
-        masterMixer.SetFloat(exposedVolumeParameterString, mixerVolume);
-        print($"Set volume of master mixer to {mixerVolume}");
+        //float mixerVolume = Mathf.Log10(Mathf.Max(0.0001f, volumeSlider.value)) * 20;
+        masterMixer.SetFloat(exposedVolumeParameterString, volumeSlider.value);
     }
 
     public void HandleVolumeSliderChanged(float num)
     {
         //float mixerVolume = Mathf.Log10(Mathf.Max(0.0001f, num)) * 20;
         masterMixer.SetFloat(exposedVolumeParameterString, num);
-        print($"Set volume of master mixer to {num}");
     }
 }
