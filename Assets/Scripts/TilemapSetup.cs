@@ -330,7 +330,7 @@ public class TilemapSetup : MonoBehaviour
     private void GenerateBossRoom(int x, int y, int level)
     {
         GameObject bossRoom = Instantiate(level1BossRoom, new Vector2(x * roomWidth-1, y * roomWidth), Quaternion.identity, mainGrid.transform);
-        GameObject boss = Instantiate(level1Boss, new Vector2(x * roomWidth + roomWidth/2, y * roomWidth + roomWidth/2), Quaternion.identity);
+        GameObject boss = Instantiate(level1Boss, new Vector2(x * roomWidth + roomWidth/2, y * roomWidth + roomWidth), Quaternion.identity);
 
         string bossHealth;
         switch(level){
