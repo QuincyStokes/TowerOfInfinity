@@ -333,8 +333,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8799698580715087150}
-        m_TargetAssemblyTypeName: PotionReward, Assembly-CSharp
-        m_MethodName: Reward
+        m_TargetAssemblyTypeName: BaseReward, Assembly-CSharp
+        m_MethodName: OnRewardSelected
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

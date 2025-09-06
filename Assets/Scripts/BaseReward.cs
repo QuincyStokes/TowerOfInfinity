@@ -32,7 +32,7 @@ public abstract class BaseReward : MonoBehaviour
 
     public void OnRewardSelected()
     {
-        AudioManager.Instance.PlayOneShot(confirmSFX, 1f, UIamg);
+        AudioManager.Instance.PlayOneShot(confirmSFX, 2f, UIamg);
         Reward();
     }
 

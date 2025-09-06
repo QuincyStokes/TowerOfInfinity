@@ -76,15 +76,15 @@ public class WeaponHandler : MonoBehaviour
         }
     }
 
-    public void ButtonDecreaseLevel()
+    public void ButtonDecreaseLevel(int index)
     {
-        currentWeapon.DecreaseLevel();
+        weapons[index].DecreaseLevel();
         UpdateLevelUI();
     }
 
-    public void ButtonIncreaseLevel()
+    public void ButtonIncreaseLevel(int index)
     {
-        currentWeapon.IncreaseLevel();
+        weapons[index].IncreaseLevel();
         UpdateLevelUI();
     }
 

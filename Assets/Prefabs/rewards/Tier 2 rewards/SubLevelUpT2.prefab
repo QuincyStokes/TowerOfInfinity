@@ -124,8 +124,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6559496746117603648}
-        m_TargetAssemblyTypeName: WeaponLevelUp, Assembly-CSharp
-        m_MethodName: Reward
+        m_TargetAssemblyTypeName: BaseReward, Assembly-CSharp
+        m_MethodName: OnRewardSelected
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

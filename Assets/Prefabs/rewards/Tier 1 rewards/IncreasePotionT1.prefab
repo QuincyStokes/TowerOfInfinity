@@ -124,8 +124,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5414792565428536190}
-        m_TargetAssemblyTypeName: IncreasePotion, Assembly-CSharp
-        m_MethodName: Reward
+        m_TargetAssemblyTypeName: BaseReward, Assembly-CSharp
+        m_MethodName: OnRewardSelected
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
