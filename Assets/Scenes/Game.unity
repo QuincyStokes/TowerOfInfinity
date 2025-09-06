@@ -122,11 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &6930069 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7892356447338755046, guid: abdd7fa0232a0354695b54b1eb5505e1, type: 3}
-  m_PrefabInstance: {fileID: 7343146954343969036}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &21033469 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4606840641327670677, guid: abdd7fa0232a0354695b54b1eb5505e1, type: 3}
@@ -2478,10 +2473,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21033469}
     - target: {fileID: 641086064138184372, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
-      propertyPath: weaponOperationUI.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 641086064138184372, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
       propertyPath: weaponLevelText.Array.data[0]
       value: 
       objectReference: {fileID: 1263742316}
@@ -2513,46 +2504,6 @@ PrefabInstance:
       propertyPath: weaponOperationUI.Array.data[3]
       value: 
       objectReference: {fileID: 772219733}
-    - target: {fileID: 1445393846705215535, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 3782308264854649629, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
-      propertyPath: m_text
-      value: 100/3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3782308264854649629, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
-      propertyPath: m_fontSize
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 3782308264854649629, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 3782308264854649629, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
-      propertyPath: m_lineSpacing
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3782308264854649629, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 3782308264854649629, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 3782308264854649629, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 3782308264854649629, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082872745064156014, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
-      propertyPath: health
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4082872745064156014, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
       propertyPath: loseScreen
       value: 
@@ -2565,14 +2516,6 @@ PrefabInstance:
       propertyPath: potionHealthText
       value: 
       objectReference: {fileID: 1301358250}
-    - target: {fileID: 4351451217219616346, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
-      propertyPath: moveTime
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 4351451217219616346, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 6930069}
     - target: {fileID: 4351451217219616346, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
       propertyPath: tilemapSetup
       value: 
@@ -2620,10 +2563,6 @@ PrefabInstance:
     - target: {fileID: 6954491748809127921, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7594298008166725324, guid: 6f32cb6a6c87da04f9c9f906a4772db3, type: 3}
-      propertyPath: hitboxes
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
