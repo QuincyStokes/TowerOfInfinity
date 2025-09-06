@@ -76,6 +76,18 @@ public class WeaponHandler : MonoBehaviour
         }
     }
 
+    public void ButtonDecreaseLevel()
+    {
+        currentWeapon.DecreaseLevel();
+        UpdateLevelUI();
+    }
+
+    public void ButtonIncreaseLevel()
+    {
+        currentWeapon.IncreaseLevel();
+        UpdateLevelUI();
+    }
+
     void SwitchWeapon(Weapon weapon, int weaponIndex){
         currentWeapon = weapon;
         Debug.Log($"Switching icon to {weaponIconsUI[weaponIndex].sprite.name}");
