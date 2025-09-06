@@ -157,7 +157,7 @@ public class Weapon
     public void LevelUp(int up=1){
         Debug.Log("LevelUp() called");
         maxlevel+=up;
-        level += up;
+        level = maxlevel;
         Debug.Log($"{name} levelrf up to level {maxlevel}!");
     }
 
