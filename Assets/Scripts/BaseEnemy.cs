@@ -120,7 +120,8 @@ public abstract class BaseEnemy : MonoBehaviour
                         outerCollider2d.enabled = true;
                         if (enemyHit.transform == null)
                         {
-                            thisObject.transform.localScale = new Vector2(-5f, 5f);
+                            
+                            thisObject.transform.localScale = new Vector2(Mathf.Abs(thisObject.transform.localScale.x) * -1, thisObject.transform.localScale.y);
                             StartCoroutine(SmoothMovement(new Vector3(transform.position.x - 1, transform.position.y, 0)));
                         }
                         else
@@ -141,7 +142,7 @@ public abstract class BaseEnemy : MonoBehaviour
                         outerCollider2d.enabled = true;
                         if (enemyHit.transform == null)
                         {
-                            thisObject.transform.localScale = new Vector2(5f, 5f);
+                            thisObject.transform.localScale = new Vector2(Mathf.Abs(thisObject.transform.localScale.x), thisObject.transform.localScale.y);
                             StartCoroutine(SmoothMovement(new Vector3(transform.position.x + 1, transform.position.y, 0)));
                         }
                     }
