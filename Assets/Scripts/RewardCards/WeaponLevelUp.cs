@@ -16,6 +16,7 @@ public class WeaponLevelUp : BaseReward
     public override void Reward()
     {
         WeaponHandler.Instance.weapons[weaponToLevel].LevelUp(levelsToAdd);
+        WeaponHandler.Instance.UpdateLevelUI();
         RewardManager.Instance.DisableRewardMenu();
     }
 

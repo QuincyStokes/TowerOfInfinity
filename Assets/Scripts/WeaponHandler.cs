@@ -145,6 +145,7 @@ public class Weapon
     public void LevelUp(int up=1){
         Debug.Log("LevelUp() called");
         maxlevel+=up;
+        level += up;
         Debug.Log($"{name} levelrf up to level {maxlevel}!");
     }
 
@@ -159,7 +160,7 @@ public class Weapon
 
     public void DecreaseLevel()
     {
-        if(level == minlevel)
+        if(level <= minlevel)
         {
             level = maxlevel;
         }
@@ -170,7 +171,7 @@ public class Weapon
 
     public void IncreaseLevel()
     {
-        if(level == maxlevel)
+        if(level >= maxlevel)
         {
             level = minlevel;
         }
